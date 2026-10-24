@@ -218,3 +218,25 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Card images (~700MB), symlinked or copied locally
+examples/card_arithmetic/images/**/*.jpg
+# Track benchmark reports and logs; keep archived runs local.
+!/benchmark_results/**/*.log
+/benchmark_results/old_runs/
+# MNIST images, downloaded by torchvision or symlinked locally
+/.vscode/
+/.claude/
+# Command logs written by log.sh
+/logs/
+
+examples/data/MNIST/raw/*
+examples/**/data/MNIST/raw/*
+saved_models/*
+benchmark_results/**/saved_models/
+examples/baseline/**/saved_models/
+examples/baseline/member3/saved_models/member3_stable_models.pkl
+examples/baseline/member5/saved_models/member5_stable_models.pkl
+
+examples/baseline/data/hasy/
+examples/baseline/data/hasy/

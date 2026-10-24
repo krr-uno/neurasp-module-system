@@ -1,0 +1,26 @@
+# The neurasp2 environment, with the versions this repository was developed and
+# measured with. Create it with:
+#
+#     conda env create -f environment.yml
+#
+# torch and torchvision are the CUDA 13.2 builds; on a machine whose driver needs
+# another CUDA version, change the index URL (and the +cu132 suffixes) to a matching
+# build from https://download.pytorch.org/whl/. Clingo must be version 6: the code
+# uses its new API, and Clingo 5 will not work.
+name: neurasp2
+channels:
+  - potassco/label/dev-20
+  - conda-forge
+dependencies:
+  - python=3.14.7
+  - clingo=6.0.0
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu132
+      - torch==2.14.0+cu132
+      - torchvision==0.29.0+cu132
+      - numpy==2.5.2
+      - pandas==3.0.6
+      - pillow==12.3.0
+      - black==26.5.1
+      - mypy==2.4.0

@@ -1,0 +1,14 @@
+[tool.mypy]
+files = ["neurasp", "examples", "tests"]
+# Legacy baseline sources use a separate environment and are not type-checked.
+exclude = ["^examples/baseline/", "^examples/mnistAdd/baseline/", "^examples/mnistAdd/dataGen\\.py$"]
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+
+[[tool.mypy.overrides]]
+# pandas needs pandas-stubs, which is not installed; torchvision ships no types.
+module = ["pandas", "pandas.*", "torchvision", "torchvision.*"]
+ignore_missing_imports = true
